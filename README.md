@@ -8,7 +8,7 @@ Usage is quite simple : use `uInput.Init()` as soon as possible in your code, an
 Key bindings can be defined as follows :
 
     uInput.DefineKey("Jump", KeyCode.X);
-    uInput.DefineKey("Jump", KeyCode.C);
+    uInput.DefineKey("Fire", KeyCode.C);
     uInput.DefineAxis("Horizontal", KeyCode.LeftArrow, KeyCode.RightArrow, 0.1f, false);
 
 And then used as follows :

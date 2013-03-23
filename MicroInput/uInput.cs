@@ -14,7 +14,7 @@ using System.Collections.Generic;
 /// 
 /// <code>
 /// uInput.DefineKey("Jump", KeyCode.X);
-/// uInput.DefineKey("Jump", KeyCode.C);
+/// uInput.DefineKey("Fire", KeyCode.C);
 /// uInput.DefineAxis("Horizontal", KeyCode.LeftArrow, KeyCode.RightArrow, 0.1f, false);
 /// </code>
 /// 
