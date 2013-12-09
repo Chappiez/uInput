@@ -165,6 +165,16 @@ public static class uInput
 	}
 
 	/// <summary>
+	/// Gets if a key is held down.
+	/// </summary>
+	/// <param name="keyCode">Direct KeyCode identifier.</param>
+	/// <returns>The input state.</returns>
+	public static bool IsDown(KeyCode keyCode)
+	{
+		return Input.GetKey(keyCode);
+	}
+
+	/// <summary>
 	/// Gets if a key was pressed this frame.
 	/// </summary>
 	/// <param name="name">Input name.</param>
@@ -175,6 +185,16 @@ public static class uInput
 	}
 
 	/// <summary>
+	/// Gets if a key was pressed this frame.
+	/// </summary>
+	/// <param name="keyCode">Direct KeyCode identifier.</param>
+	/// <returns>The input state.</returns>
+	public static bool IsPressed(KeyCode keyCode)
+	{
+		return Input.GetKeyDown(keyCode);
+	}
+
+	/// <summary>
 	/// Gets if a key was released this frame.
 	/// </summary>
 	/// <param name="name">Input name.</param>
@@ -182,6 +202,16 @@ public static class uInput
 	public static bool IsReleased(string name)
 	{
 		return GetInputKey(name).isReleased;
+	}
+
+	/// <summary>
+	/// Gets if a key was released this frame.
+	/// </summary>
+	/// <param name="keyCode">Direct KeyCode identifier.</param>
+	/// <returns>The input state.</returns>
+	public static bool IsReleased(KeyCode keyCode)
+	{
+		return Input.GetKeyUp(keyCode);
 	}
 
 	/// <summary>
