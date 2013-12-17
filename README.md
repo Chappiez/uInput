@@ -1,7 +1,7 @@
-µInput
+uInput
 ======
 
-µInput is an alternative to the default Input Manager bundled with Unity3D. It allows you to define and modify keyboard inputs and axis at runtime, which is something the default Input Manager does not, surprisingly. It's purely script-driven so don't expect any GUI.
+uInput is an alternative to the default Input Manager bundled with Unity3D. It allows you to define and modify keyboard inputs and axis at runtime, which is something the default Input Manager does not, surprisingly. It's purely script-driven so don't expect any GUI.
 
 Usage is quite simple : use `uInput.Init()` as soon as possible in your code, and call `uInput.Update()` on every frame. You can skip this last step if you don't make use of axes.
 
