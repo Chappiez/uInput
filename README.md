@@ -28,4 +28,4 @@ Note : at the moment, µInput only handles keyboard events. For mouse and joysti
 License
 -------
 
-MIT
+MIT (see [License.txt](LICENSE.txt))
