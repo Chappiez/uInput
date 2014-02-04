@@ -31,7 +31,7 @@ public class uInputAxis
 	/// </summary>
 	public float Value
 	{
-		get { return Value; }
+		get { return value; }
 	}
 
 	float value;
