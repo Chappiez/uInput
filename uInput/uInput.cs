@@ -167,7 +167,7 @@ public static class uInput
 	/// <returns>A value in range [-1;1].</returns>
 	public static float GetAxis(string name)
 	{
-		return GetInputAxis(name).GetValue();
+		return GetInputAxis(name).Value;
 	}
 
 	/// <summary>

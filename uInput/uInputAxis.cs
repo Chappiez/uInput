@@ -26,6 +26,14 @@ public class uInputAxis
 	/// </summary>
 	public bool Snap;
 
+	/// <summary>
+	/// Gets the axis value in range [-1;1].
+	/// </summary>
+	public float Value
+	{
+		get { return Value; }
+	}
+
 	float value;
 	float target;
 
@@ -44,15 +52,6 @@ public class uInputAxis
 		this.Snap = snap;
 
 		Reset();
-	}
-
-	/// <summary>
-	/// Gets the axis value
-	/// </summary>
-	/// <returns>A value in range [-1;1].</returns>
-	public float GetValue()
-	{
-		return value;
 	}
 
 	/// <summary>
