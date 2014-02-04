@@ -67,12 +67,19 @@ public static class uInput
 	/// <returns>The defined <c>uInputKey</c>.</returns>
 	public static uInputKey DefineKey(string name, KeyCode keycode)
 	{
-		if (keys.ContainsKey(name))
-			keys[name].keycode = keycode;
-		else
-			keys.Add(name, new uInputKey(keycode));
+		uInputKey key;
 
-		return keys[name];
+		if (keys.TryGetValue(name, out key))
+		{
+			key.keycode = keycode;
+		}
+		else
+		{
+			key = new uInputKey(keycode);
+			keys.Add(name, key);
+		}
+
+		return key;
 	}
 
 	/// <summary>
@@ -86,17 +93,22 @@ public static class uInput
 	/// <returns>The defined <c>uInputAxis</c>.</returns>
 	public static uInputAxis DefineAxis(string name, KeyCode keycodeNegative, KeyCode keycodePositive, float ease = 1f, bool snap = false)
 	{
-		if (axes.ContainsKey(name))
+		uInputAxis axis;
+
+		if (axes.TryGetValue(name, out axis))
 		{
-			axes[name].keycodeNegative = keycodeNegative;
-			axes[name].keycodePositive = keycodePositive;
-			axes[name].ease = ease;
-			axes[name].snap = snap;
+			axis.keycodeNegative = keycodeNegative;
+			axis.keycodePositive = keycodePositive;
+			axis.ease = ease;
+			axis.snap = snap;
 		}
 		else
-			axes.Add(name, new uInputAxis(keycodeNegative, keycodePositive, ease, snap));
+		{
+			axis = new uInputAxis(keycodeNegative, keycodePositive, ease, snap);
+			axes.Add(name, axis);
+		}
 
-		return axes[name];
+		return axis;
 	}
 
 	/// <summary>
@@ -125,10 +137,12 @@ public static class uInput
 	/// <returns>The <c>uInputKey</c> associated with the given name.</returns>
 	public static uInputKey GetInputKey(string name)
 	{
-		if (!keys.ContainsKey(name))
+		uInputKey key;
+
+		if (!keys.TryGetValue(name, out key))
 			throw new uInputException("Key definition not found: " + name);
 
-		return keys[name];
+		return key;
 	}
 
 	/// <summary>
@@ -138,10 +152,12 @@ public static class uInput
 	/// <returns>The <c>uInputAxis</c> associated with the given name.</returns>
 	public static uInputAxis GetInputAxis(string name)
 	{
-		if (!axes.ContainsKey(name))
+		uInputAxis axis;
+
+		if (!axes.TryGetValue(name, out axis))
 			throw new uInputException("Axis definition not found: " + name);
 
-		return axes[name];
+		return axis;
 	}
 
 	/// <summary>
