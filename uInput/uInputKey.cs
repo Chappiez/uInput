@@ -8,22 +8,22 @@ public class uInputKey
 	/// <summary>
 	/// Keycode mapped to this <c>uInputKey</c>.
 	/// </summary>
-	public KeyCode keycode;
+	public KeyCode Keycode;
 
 	/// <summary>
 	/// Gets if this key is held down.
 	/// </summary>
-	public bool isDown { get { return Input.GetKey(keycode); } }
+	public bool IsDown { get { return Input.GetKey(Keycode); } }
 
 	/// <summary>
 	/// Gets if this key was pressed this frame.
 	/// </summary>
-	public bool isPressed { get { return Input.GetKeyDown(keycode); } }
+	public bool IsPressed { get { return Input.GetKeyDown(Keycode); } }
 
 	/// <summary>
 	/// Gets if this key was released this frame.
 	/// </summary>
-	public bool isReleased { get { return Input.GetKeyUp(keycode); } }
+	public bool IsReleased { get { return Input.GetKeyUp(Keycode); } }
 
 	/// <summary>
 	/// Creates a new <c>uInputKey</c>. Use <c>uInput.DefineKey()</c> instead.
@@ -31,6 +31,6 @@ public class uInputKey
 	/// <param name="keycode">A keycode.</param>
 	public uInputKey(KeyCode keycode)
 	{
-		this.keycode = keycode;
+		this.Keycode = keycode;
 	}
 }

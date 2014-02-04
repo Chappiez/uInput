@@ -40,12 +40,12 @@ public static class uInput
 	/// <summary>
 	/// Is any key or mouse button currently held down ?
 	/// </summary>
-	public static bool anyKeyDown { get { return Input.anyKey; } }
+	public static bool AnyKeyDown { get { return Input.anyKey; } }
 	
 	/// <summary>
 	/// Returns true the first frame the user hits any key or mouse button.
 	/// </summary>
-	public static bool anyKeyPressed { get { return Input.anyKeyDown; } }
+	public static bool AnyKeyPressed { get { return Input.anyKeyDown; } }
 
 	static Dictionary<string, uInputKey> keys;
 	static Dictionary<string, uInputAxis> axes;
@@ -71,7 +71,7 @@ public static class uInput
 
 		if (keys.TryGetValue(name, out key))
 		{
-			key.keycode = keycode;
+			key.Keycode = keycode;
 		}
 		else
 		{
@@ -97,10 +97,10 @@ public static class uInput
 
 		if (axes.TryGetValue(name, out axis))
 		{
-			axis.keycodeNegative = keycodeNegative;
-			axis.keycodePositive = keycodePositive;
-			axis.ease = ease;
-			axis.snap = snap;
+			axis.KeycodeNegative = keycodeNegative;
+			axis.KeycodePositive = keycodePositive;
+			axis.Ease = ease;
+			axis.Snap = snap;
 		}
 		else
 		{
@@ -177,7 +177,7 @@ public static class uInput
 	/// <returns>The input state.</returns>
 	public static bool IsDown(string name)
 	{
-		return GetInputKey(name).isDown;
+		return GetInputKey(name).IsDown;
 	}
 
 	/// <summary>
@@ -197,7 +197,7 @@ public static class uInput
 	/// <returns>The input state.</returns>
 	public static bool IsPressed(string name)
 	{
-		return GetInputKey(name).isPressed;
+		return GetInputKey(name).IsPressed;
 	}
 
 	/// <summary>
@@ -217,7 +217,7 @@ public static class uInput
 	/// <returns>The input state.</returns>
 	public static bool IsReleased(string name)
 	{
-		return GetInputKey(name).isReleased;
+		return GetInputKey(name).IsReleased;
 	}
 
 	/// <summary>

@@ -9,22 +9,22 @@ public class uInputAxis
 	/// <summary>
 	/// Keycode mapped to the negative part of the axis.
 	/// </summary>
-	public KeyCode keycodeNegative;
+	public KeyCode KeycodeNegative;
 
 	/// <summary>
 	/// Keycode mapped to the positive part of the axis.
 	/// </summary>
-	public KeyCode keycodePositive;
+	public KeyCode KeycodePositive;
 
 	/// <summary>
 	/// Ease-out speed (range [0;1]). A value of 1 will prevent easing.
 	/// </summary>
-	public float ease;
+	public float Ease;
 
 	/// <summary>
 	/// If enabled, the axis value will be immediately reset to zero after it receives opposite inputs.
 	/// </summary>
-	public bool snap;
+	public bool Snap;
 
 	float value;
 	float target;
@@ -38,10 +38,10 @@ public class uInputAxis
 	/// <param name="snap">If enabled, the axis value will be immediately reset to zero after it receives opposite inputs.</param>
 	public uInputAxis(KeyCode keycodeNegative, KeyCode keycodePositive, float ease = 1f, bool snap = false)
 	{
-		this.keycodeNegative = keycodeNegative;
-		this.keycodePositive = keycodePositive;
-		this.ease = ease;
-		this.snap = snap;
+		this.KeycodeNegative = keycodeNegative;
+		this.KeycodePositive = keycodePositive;
+		this.Ease = ease;
+		this.Snap = snap;
 
 		Reset();
 	}
@@ -60,19 +60,19 @@ public class uInputAxis
 	/// </summary>
 	public void Update()
 	{
-		if (Input.GetKey(keycodeNegative))
+		if (Input.GetKey(KeycodeNegative))
 		{
-			if (snap && value > 0f) value = 0f;
+			if (Snap && value > 0f) value = 0f;
 			target = -1f;
 		}
-		else if (Input.GetKey(keycodePositive))
+		else if (Input.GetKey(KeycodePositive))
 		{
-			if (snap && value < 0f) value = 0f;
+			if (Snap && value < 0f) value = 0f;
 			target = 1f;
 		}
 		else target = 0f;
 
-		value += (target - value) * ease;
+		value += (target - value) * Ease;
 	}
 
 	/// <summary>
